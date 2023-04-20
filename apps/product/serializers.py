@@ -10,6 +10,7 @@ class ProductImageSerializer(serializers.ModelSerializer):
 
 
 class ProductListSerializer(serializers.ListSerializer):
+    
     def to_representation(self, data):
         iterable = data.all() if isinstance(data, models.Manager) else data
         return [{
